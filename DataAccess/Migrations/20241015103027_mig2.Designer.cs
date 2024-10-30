@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using AppContext = DataAccess.Context.AppContext;
+using WebAppContext = DataAccess.Context.WebAppContext;
 
 #nullable disable
 
 namespace DataAccess.Migrations
 {
-    [DbContext(typeof(AppContext))]
+    [DbContext(typeof(WebAppContext))]
     [Migration("20241015103027_mig2")]
     partial class mig2
     {

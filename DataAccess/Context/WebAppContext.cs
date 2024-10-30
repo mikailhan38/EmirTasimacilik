@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Context
 {
-    public class AppContext:IdentityDbContext
+    public class WebAppContext:IdentityDbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

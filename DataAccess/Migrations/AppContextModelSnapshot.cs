@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using AppContext = DataAccess.Context.AppContext;
+using WebAppContext = DataAccess.Context.WebAppContext;
 
 #nullable disable
 
 namespace DataAccess.Migrations
 {
-    [DbContext(typeof(AppContext))]
+    [DbContext(typeof(WebAppContext))]
     partial class AppContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
