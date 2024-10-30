@@ -1,0 +1,41 @@
+﻿@using Entites.Concrete
+@model List<Welcome>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="contanier">
+    <div class="row">
+        <h3>Site Karşılama Ekranı</h3>
+        <div class="col-12">
+            @if(Model.Count<1)
+            {
+                <a asp-action="WelcomeAdd" asp-controller="Welcome" class="btn btn-outline-primary">Ekle</a>
+            }
+            <table class="table table-hover">
+                <thead class="table-secondary">
+                    <tr>
+                        <th>#</th>
+                        <th>Başlık</th>
+                        <th>Açıklama</th>
+                        <th>Düzenle</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.WelcomeId</td>
+                            <td>@item.Title</td>
+                            <td>@item.Description</td>
+                            <td><a asp-action="WelcomeUpdate" asp-controller="Welcome" asp-route-id="@item.WelcomeId" class="btn btn-outline-info">Düzenle</a></td>
+                            
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

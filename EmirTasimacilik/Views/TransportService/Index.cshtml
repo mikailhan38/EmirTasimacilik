@@ -1,0 +1,42 @@
+﻿@using Entites.Concrete
+@model List<TransportService>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="contanier">
+    <div class="row">
+        <h3>Hizmetler</h3>
+
+        <div class="col-12">
+
+
+            <a asp-action="TransportServiceAdd" asp-controller="TransportService" class="btn btn-outline-primary">Ekle</a>
+
+            <table class="table table-hover">
+                <thead class="table-secondary">
+                    <tr>
+                        <th>#</th>
+                        <th>Başlık</th>
+                        <th>Açıklama</th>
+                        <th>Düzenle</th>
+                        <th>Sil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.TransportServiceId</td>
+                            <td>@item.Title</td>
+                            <td>@item.Description</td>
+                            <td><a asp-action="TransportServiceUpdate" asp-controller="TransportService" asp-route-id="@item.TransportServiceId" class="btn btn-outline-info">Düzenle</a></td>
+                            <td><a asp-action="TransportServiceDelete" asp-controller="TransportService" asp-route-id="@item.TransportServiceId" class="btn btn-outline-danger">Sil</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+

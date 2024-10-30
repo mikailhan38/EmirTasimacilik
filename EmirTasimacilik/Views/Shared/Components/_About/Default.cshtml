@@ -1,0 +1,29 @@
+﻿@using Entites.Concrete
+@model List<About>
+<section class="about_section layout_padding-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-6">
+                @foreach (var item in Model)
+                {
+                    <div class="detail-box">
+                        <h2>
+                            @item.Title
+                        </h2>
+                        <p>
+                            @item.Description
+                        </p>
+                        <a href="">
+                            Read More
+                        </a>
+                    </div>
+                }
+            </div>
+            <div class="col-lg-7 col-md-6">
+                <div class="img-box">
+                    <img src="images/about-img.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

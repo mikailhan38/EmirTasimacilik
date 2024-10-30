@@ -1,0 +1,46 @@
+﻿@using Entites.Concrete
+@model List<SocialMedia>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Sosyal Medya Hesapları</h1>
+
+<div class="contanier">
+    <div class="row">
+        <h3>Sosya Medya Hesapları</h3>
+
+        <div class="col-12">
+           
+            
+                <a asp-action="SocialMediaAdd" asp-controller="SocialMedia" class="btn btn-outline-primary">Ekle</a>
+            
+            <table class="table table-hover">
+                <thead class="table-secondary">
+                    <tr>
+                        <th>#</th>
+                        <th>Başlık</th>
+                        <th>Simge</th>
+                        <th>Url</th>
+                        <th>Düzenle</th>
+                        <th>Sil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.SocialMediaId</td>
+                            <td>@item.Title</td>
+                            <td>@item.Icon</td>
+                            <td>@item.Url</td>
+                            <td><a asp-action="SocialMediaUpdate" asp-controller="SocialMedia" asp-route-id="@item.SocialMediaId" class="btn btn-outline-info">Düzenle</a></td>
+                            <td><a asp-action="SocialMediaDelete" asp-controller="SocialMedia" asp-route-id="@item.SocialMediaId" class="btn btn-outline-danger">Sil</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+

@@ -1,0 +1,31 @@
+﻿@using Entites.Concrete
+@model List<Welcome>
+<section class="slider_section ">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-6 ">
+                <div class="detail-box">
+                    @foreach(var item in Model)
+                        {
+                    <h1>
+                        
+                           @item.Title
+                        
+                    </h1>
+                    <p>
+                        @item.Description
+                    </p>
+                    }
+                    <a href="">
+                        Bize Ulaşın
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="img-box">
+                    <img src="images/homepage.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,14 @@
+﻿@using Entites.Concrete
+@model List<SocialMedia>
+<div class="social-box">
+    <h4>
+        Bizi Takip Edin
+    </h4>
+    <div class="box">
+        @foreach(var item in Model){
+        <a href="@item.Url">
+            <i class="@item.Icon" aria-hidden="true"></i>
+        </a>
+        }
+    </div>
+</div>
