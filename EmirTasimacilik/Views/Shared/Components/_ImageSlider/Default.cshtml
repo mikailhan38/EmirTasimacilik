@@ -8,7 +8,7 @@
                 @foreach (var item in Model)
                 {
                     <div class="carousel-item active">
-                        <img src="~/@item.ImageUrl" class="d-block w-100" alt="@item.Description" data-toggle="modal" data-target="#imageModal1">
+                        <img src="~@item.ImageUrl" class="d-block w-100" alt="@item.Description" data-toggle="modal" data-target="#imageModal1">
                     </div>
                 }
             }
@@ -36,7 +36,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <img src="~/@item.ImageUrl" class="img-fluid" alt="@item.Description">
+                        <img src="~@item.ImageUrl" class="img-fluid" alt="@item.Description">
                     </div>
                 </div>
             </div>
