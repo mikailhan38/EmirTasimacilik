@@ -52,6 +52,12 @@ namespace EmirTasimacilik.Controllers
             _imageService.Add(image);
             return View();
         }
+        public IActionResult ImageDelete(int id)
+        {
+            var values = _imageService.GetById(id);
+            _imageService.Delete(values);
+            return RedirectToAction("Index");
+        }
 
     }
 }

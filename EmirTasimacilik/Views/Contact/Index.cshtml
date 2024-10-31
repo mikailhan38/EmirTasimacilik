@@ -1,0 +1,46 @@
+﻿@using Entites.Concrete
+@model List<Contact>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="contanier">
+    <div class="row">
+        <h3>İletişim Listesi</h3>
+        <div class="col-12">
+            <table class="table table-hover">
+                <thead class="table-secondary">
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Mesaj</th>
+                        <th>Tarih</th>
+                        <th>Sil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.ContactId</td>
+                                <td>@item.Name</td>
+                                <td>@item.Email</td>
+                                <td>@item.Message</td>
+                                <td>@item.Date.ToShortDateString()</td>
+                                <td><a asp-action="ContactDelete" asp-controller="Contact" asp-route-id="@item.ContactId" class="btn btn-outline-danger">Sil</a></td>
+                            </tr>
+                        }
+                    }
+                    else{
+                        <tr>
+                            <td>Veri Bulunamadı</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

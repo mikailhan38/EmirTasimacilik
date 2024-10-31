@@ -16,7 +16,7 @@ namespace EmirTasimacilik.Controllers
         public IActionResult Index()
         {
             var values = _contactService.GetAll();
-            return View();
+            return View(values);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -40,6 +40,12 @@ namespace EmirTasimacilik.Controllers
                 ModelState.AddModelError("", "Mesajınız gönderilirken bir hata oluştu.");
                 return ViewComponent("_Contact", new { model = contact });
             }
+        }
+        public IActionResult ContactDelete(int id)
+        {
+            var values = _contactService.GetById(id);
+            _contactService.Delete(values);
+            return RedirectToAction("Index");
         }
     }
 }

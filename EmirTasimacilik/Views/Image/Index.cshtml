@@ -29,10 +29,7 @@
                             </td>
                             <td>@image.Description</td>
                             <td>
-                                <a href="/image/edit/@image.ImageId" class="btn btn-sm btn-warning">
-                                    <i class="fas fa-edit"></i> Düzenle
-                                </a>
-                                <a href="/image/delete/@image.ImageId" class="btn btn-sm btn-danger" onclick="return confirm('Bu resmi silmek istediğinizden emin misiniz?');">
+                                <a asp-controller="Image" asp-action="ImageDelete" class="btn btn-sm btn-danger" onclick="return confirm('Bu resmi silmek istediğinizden emin misiniz?');">
                                     <i class="fas fa-trash"></i> Sil
                                 </a>
                             </td>

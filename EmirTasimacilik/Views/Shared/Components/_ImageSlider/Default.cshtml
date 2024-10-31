@@ -1,15 +1,18 @@
-﻿<div class="container mt-5">
+﻿@using Entites.Concrete
+@model List<Image>
+<div class="container mt-5">
     <div id="carouselExample" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="~/images/client-1.jpg" class="d-block w-100" alt="Image 1" data-toggle="modal" data-target="#imageModal1">
-            </div>
-            <div class="carousel-item">
-                <img src="~/images/client-2.jpg" class="d-block w-100" alt="Image 2" data-toggle="modal" data-target="#imageModal2">
-            </div>
-            <div class="carousel-item">
-                <img src="~/images/about-img.jpg" class="d-block w-100" alt="Image 3" data-toggle="modal" data-target="#imageModal3">
-            </div>
+            @if (Model != null)
+            {
+                @foreach (var item in Model)
+                {
+                    <div class="carousel-item active">
+                        <img src="~/@item.ImageUrl" class="d-block w-100" alt="@item.Description" data-toggle="modal" data-target="#imageModal1">
+                    </div>
+                }
+            }
+
         </div>
         <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -23,31 +26,20 @@
 </div>
 
 <!-- Modals for Enlarged Images -->
-<div class="modal fade" id="imageModal1" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="~/images/client-1.jpg" class="img-fluid" alt="Image 1">
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="imageModal2" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel2" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="~/images/client-2.jpg" class="img-fluid" alt="Image 2">
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="imageModal3" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel3" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="~/images/about-img.jpg" class="img-fluid" alt="Image 3">
-            </div>
-        </div>
-    </div>
+@if (Model != null)
+{
+    @foreach (var item in Model)
+    {
 
-</div>
+
+        <div class="modal fade" id="imageModal1" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <img src="~/@item.ImageUrl" class="img-fluid" alt="@item.Description">
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
