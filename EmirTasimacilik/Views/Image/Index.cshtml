@@ -29,7 +29,7 @@
                             </td>
                             <td>@image.Description</td>
                             <td>
-                                <a asp-controller="Image" asp-action="ImageDelete" class="btn btn-sm btn-danger" onclick="return confirm('Bu resmi silmek istediğinizden emin misiniz?');">
+                                <a asp-controller="Image" asp-action="ImageDelete" asp-route-id="@item.ImageId" class="btn btn-sm btn-danger" onclick="return confirm('Bu resmi silmek istediğinizden emin misiniz?');">
                                     <i class="fas fa-trash"></i> Sil
                                 </a>
                             </td>
