@@ -15,6 +15,7 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Resim</th>
+                        <th scope="col">URL</th>
                         <th scope="col">Açıklama</th>
                         <th scope="col">İşlemler</th>
                     </tr>
@@ -27,9 +28,10 @@
                             <td>
                                 <img src="@image.ImageUrl" alt="Resim" class="img-thumbnail" style="width: 100px; height: 100px;">
                             </td>
+                            <td scope="row">@image.ImageUrl</td>
                             <td>@image.Description</td>
                             <td>
-                                <a asp-controller="Image" asp-action="ImageDelete" asp-route-id="@item.ImageId" class="btn btn-sm btn-danger" onclick="return confirm('Bu resmi silmek istediğinizden emin misiniz?');">
+                                <a asp-controller="Image" asp-action="ImageDelete" asp-route-id="@image.ImageId" class="btn btn-sm btn-danger" onclick="return confirm('Bu resmi silmek istediğinizden emin misiniz?');">
                                     <i class="fas fa-trash"></i> Sil
                                 </a>
                             </td>
